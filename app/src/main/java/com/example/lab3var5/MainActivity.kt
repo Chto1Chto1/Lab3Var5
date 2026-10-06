@@ -71,6 +71,13 @@ fun SumCalculation(modifier: Modifier = Modifier) {
 
         Button(
             onClick = {
+                val n = input.toIntOrNull()
+                result = when {
+                    input.isBlank() -> "Введите число"
+                    n == null -> "Это не число"
+                    n < 1 -> "n должно быть натуральным (>= 1)"
+                    else -> "OK"
+                }
             },
             modifier = Modifier.width(200.dp)
         ) {
