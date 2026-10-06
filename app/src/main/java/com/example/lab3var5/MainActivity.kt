@@ -93,6 +93,14 @@ fun SumCalculation(modifier: Modifier = Modifier) {
     }
 }
 
+fun factorial(k: Int): Double {
+    var f = 1.0
+    for (i in 1..k) {
+        f *= i
+    }
+    return f
+}
+
 @Preview(showBackground = true)
 @Composable
 fun SumCalculationPreview() {
