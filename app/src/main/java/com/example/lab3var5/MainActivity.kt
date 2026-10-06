@@ -45,6 +45,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun SumCalculation(modifier: Modifier = Modifier) {
     var input by remember { mutableStateOf("") }
+    var result by remember { mutableStateOf("") }
 
     Column(
         modifier = modifier.fillMaxSize(),
@@ -75,6 +76,13 @@ fun SumCalculation(modifier: Modifier = Modifier) {
         ) {
             Text("Вычислить")
         }
+
+        Spacer(modifier = Modifier.height(36.dp))
+
+        Text(
+            text = result,
+            fontSize = 18.sp
+        )
     }
 }
 
