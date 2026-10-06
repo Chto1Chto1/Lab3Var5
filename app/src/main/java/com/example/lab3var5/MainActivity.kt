@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -64,6 +65,16 @@ fun SumCalculation(modifier: Modifier = Modifier) {
             label = { Text("Введите n") },
             modifier = Modifier.width(300.dp)
         )
+
+        Spacer(modifier = Modifier.height(36.dp))
+
+        Button(
+            onClick = {
+            },
+            modifier = Modifier.width(200.dp)
+        ) {
+            Text("Вычислить")
+        }
     }
 }
 
