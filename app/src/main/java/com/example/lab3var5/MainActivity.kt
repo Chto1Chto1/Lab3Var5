@@ -77,8 +77,9 @@ fun SumCalculation(modifier: Modifier = Modifier) {
                     n == null -> "Это не число"
                     n < 1 -> "n должно быть натуральным (>= 1)"
                     else -> {
-                        val sum = calculateSumFor(n)
-                        "Сумма = $sum"
+                        val sumFor = calculateSumFor(n)
+                        val sumWhile = calculateSumWhile(n)
+                        "For: $sumFor\nWhile: $sumWhile"
                     }
                 }
             },
@@ -96,19 +97,25 @@ fun SumCalculation(modifier: Modifier = Modifier) {
     }
 }
 
-fun factorial(k: Int): Double {
-    var f = 1.0
-    for (i in 1..k) {
-        f *= i
-    }
-    return f
-}
+
 fun calculateSumFor(n: Int): Double {
     var factorial = 1.0
     var sum = 0.0
     for (k in 1..n) {
         factorial *= k
         sum += 1.0 / factorial
+    }
+    return sum
+}
+
+fun calculateSumWhile(n: Int): Double {
+    var factorial = 1.0
+    var sum = 0.0
+    var k = 1
+    while (k <= n) {
+        factorial *= k
+        sum += 1.0 / factorial
+        k++
     }
     return sum
 }
