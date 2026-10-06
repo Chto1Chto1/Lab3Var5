@@ -76,7 +76,10 @@ fun SumCalculation(modifier: Modifier = Modifier) {
                     input.isBlank() -> "Введите число"
                     n == null -> "Это не число"
                     n < 1 -> "n должно быть натуральным (>= 1)"
-                    else -> "OK"
+                    else -> {
+                        val sum = calculateSumFor(n)
+                        "Сумма = $sum"
+                    }
                 }
             },
             modifier = Modifier.width(200.dp)
@@ -99,6 +102,15 @@ fun factorial(k: Int): Double {
         f *= i
     }
     return f
+}
+fun calculateSumFor(n: Int): Double {
+    var factorial = 1.0
+    var sum = 0.0
+    for (k in 1..n) {
+        factorial *= k
+        sum += 1.0 / factorial
+    }
+    return sum
 }
 
 @Preview(showBackground = true)
